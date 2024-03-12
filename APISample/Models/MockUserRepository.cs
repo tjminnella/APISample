@@ -14,7 +14,7 @@ namespace APISample.Models
             _UserList = new List<User>()
             {
                 new User(){Id = 1, UserName = "Thomas Minnella", UserID = "tminnella", UserPwd = "qwerty"},
-                new User(){Id = 2, UserName = "Mark Pineda", UserID = "password", UserPwd = "123"}
+                new User(){Id = 2, UserName = "John Doe", UserID = "password", UserPwd = "123"}
             };
         }
 
