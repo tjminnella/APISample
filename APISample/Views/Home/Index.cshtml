@@ -1,0 +1,45 @@
+﻿@model APISample.ViewModels.HomeViewModel
+@{
+    ViewBag.Title = "Work Care Login Page";
+}
+
+<h2>login</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    //this is for create form tag
+    @Html.AntiForgeryToken() // this is for prevent CSRF attack
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.user.UserID)</td>
+            <td>@Html.TextBoxFor(a => a.user.UserID)</td>
+            <td>@Html.ValidationMessageFor(a => a.user.UserID)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.user.UserPwd)
+            </td>
+            <td>
+                @Html.PasswordFor(a => a.user.UserPwd)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.user.UserPwd)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Index" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+} 

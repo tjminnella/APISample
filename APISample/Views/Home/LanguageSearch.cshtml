@@ -1,0 +1,43 @@
+﻿@model APISample.ViewModels.LanguageSearchViewModel
+
+@{
+    ViewBag.Title = "LanguageSearch";
+}
+<h2>Language Search</h2>
+@using (Html.BeginForm("LanguageSearch", "Home", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.purpose)</td>
+            <td>@Html.TextBoxFor(a => a.purpose)</td>
+            <td>@Html.ValidationMessageFor(a => a.purpose)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="LanguageSearch" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+
+@if (Model != null && Model.languages != null)
+{
+    @foreach (Language l in Model.languages)
+    {
+        <div class="row justify-content-center m-3">
+            <div class="col-sm-5">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4>Name : @l.Name</h4>
+                        <h4>Purpose : @l.Purpose</h4>
+                        <h4>Event Driven : @l.ObjectOriented</h4>
+                        <h4>Object Oriented : @l.ObjectOriented</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+

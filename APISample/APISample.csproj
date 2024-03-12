@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>APISample.Program</StartupObject>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Models\IUserRepository.cs~RF33759512.TMP" />
+    <None Remove="ViewModels\HomeViewModel.cs~RF32e346ba.TMP" />
+    <None Remove="ViewModels\HomeViewModel.cs~RF33c27416.TMP" />
+    <None Remove="ViewModels\HomeViewModel.cs~RF33d30ec2.TMP" />
+    <None Remove="ViewModels\LanguageSearchViewModel.cs~RF3408cf80.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
